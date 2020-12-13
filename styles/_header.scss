@@ -1,0 +1,25 @@
+//mix ins (put repeatable code somewhere
+
+@mixin flexCenter($direction, $background) {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  background: $background;
+}
+
+header {
+  @include flexCenter(column, red);
+
+  color: $textColor;
+  button {
+    background: $primaryBtn;
+    &:hover {
+      background: red;
+    }
+  }
+  &::after {
+    content: "Hellloooo";
+  }
+}
